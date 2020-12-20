@@ -1,6 +1,8 @@
 //Declare Variables
 const container = document.getElementById('container');
 const clear = document.getElementById('clear');
+const gridInput = document.querySelector('input');
+const createGrid = document.querySelector('#createGrid');
 
 //Functions
 function makeRows(rows, cols) {
@@ -33,8 +35,20 @@ function clearGrid() {
    }  
 }
 
-makeRows(16, 16);
+function createGridLayout() {
+  //clear grid colors before making new grid
+  clearGrid();
+  //grab input for grid dimensions
+  let gridDim = gridInput.value;
+  //if grid dimensions are greater than 50, it defaults to 50
+  if (gridDim > 50) {
+    gridDim = 50;
+    gridInput.value = 50;
+  }
+  makeRows(gridDim, gridDim);
+}
 
 //Event Listeners
 container.addEventListener('mouseover', changeColor)
 clear.addEventListener('click', clearGrid);
+createGrid.addEventListener('click', createGridLayout)

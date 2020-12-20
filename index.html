@@ -8,9 +8,11 @@
 </head>
 <body>
     <h1>ETCH-A-SKETCH</h1>
-    <label for="colsrows">Enter Grid Dimensions(Ex. 16 would be 16 x 16):</label><input type="number" name="colsrows"></label>
-    <button id="createGrid">Create Grid</button>
-    <button id="clear">Clear</button>
+    <div id="gridSetup">
+        <label for="colsrows">Enter Grid Dimensions:</label><input type="number" name="colsrows" value="16"></label>
+        <button id="createGrid">Create Grid</button>
+        <button id="clear">Clear</button>
+    </div>
     <div id="container">
     </div>
     <script src="app.js"></script>

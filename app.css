@@ -21,7 +21,16 @@
     text-align: center;
   } 
 
+  #gridSetup {
+    text-align: center;
+  }
+
   button {
       padding: 5px;
       margin: 10px;
   }
+
+  label {
+    padding: 5px;
+  }
+
