@@ -1,12 +1,15 @@
-const container = document.getElementById("container");
+//Declare Variables
+const container = document.getElementById('container');
+const clear = document.getElementById('clear');
 
+//Functions
 function makeRows(rows, cols) {
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
   for (i = 0; i < (rows * cols); i++) {
-    let cell = document.createElement("div");
+    let cell = document.createElement('div');
     cell.id = `grid${i}`;
-    container.appendChild(cell).className = "grid-item";
+    container.appendChild(cell).className = 'grid-item';
   };
 };
 
@@ -22,8 +25,15 @@ function changeColor(e) {
     }
 }
 
+function clearGrid() {
+    const childDivs = container.children;
+   for (let i = 0; i < childDivs.length; i++) {
+       childDivs[i].style.backgroundColor = 'white';
+   }  
+}
 
 makeRows(16, 16);
 
 //Event Listeners
 container.addEventListener('mouseover', changeColor)
+clear.addEventListener('click', clearGrid);
