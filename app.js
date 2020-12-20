@@ -26,6 +26,7 @@ function changeColor(e) {
 }
 
 function clearGrid() {
+    //Grab child divs from container div
     const childDivs = container.children;
    for (let i = 0; i < childDivs.length; i++) {
        childDivs[i].style.backgroundColor = 'white';
