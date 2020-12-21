@@ -35,9 +35,16 @@ function clearGrid() {
    }  
 }
 
+//removes existing child divs
+function removeAllChildNodes(container) {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+}
+
 function createGridLayout() {
-  //clear grid colors before making new grid
-  clearGrid();
+  //removes existing child elements
+  removeAllChildNodes(container);
   //grab input for grid dimensions
   let gridDim = gridInput.value;
   //if grid dimensions are greater than 50, it defaults to 50
@@ -45,10 +52,11 @@ function createGridLayout() {
     gridDim = 50;
     gridInput.value = 50;
   }
+  //Run Function to Generate Grid Layout
   makeRows(gridDim, gridDim);
 }
 
 //Event Listeners
-container.addEventListener('mouseover', changeColor)
+container.addEventListener('mouseover', changeColor);
 clear.addEventListener('click', clearGrid);
-createGrid.addEventListener('click', createGridLayout)
+createGrid.addEventListener('click', createGridLayout);
