@@ -47,7 +47,7 @@ function createGridLayout() {
   removeAllChildNodes(container);
   //grab input for grid dimensions
   let gridDim = gridInput.value;
-  //if grid dimensions are greater than 50, it defaults to 50
+  //if grid dimensions are greater than 100, it defaults to 100
   if (gridDim > 100) {
     gridDim = 100;
     gridInput.value = 100;
