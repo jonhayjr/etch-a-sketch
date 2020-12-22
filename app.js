@@ -48,9 +48,9 @@ function createGridLayout() {
   //grab input for grid dimensions
   let gridDim = gridInput.value;
   //if grid dimensions are greater than 50, it defaults to 50
-  if (gridDim > 50) {
-    gridDim = 50;
-    gridInput.value = 50;
+  if (gridDim > 100) {
+    gridDim = 100;
+    gridInput.value = 100;
   }
   //Run Function to Generate Grid Layout
   makeRows(gridDim, gridDim);
@@ -58,5 +58,6 @@ function createGridLayout() {
 
 //Event Listeners
 container.addEventListener('mouseover', changeColor);
+container.addEventListener('touchstart', changeColor);
 clear.addEventListener('click', clearGrid);
 createGrid.addEventListener('click', createGridLayout);
