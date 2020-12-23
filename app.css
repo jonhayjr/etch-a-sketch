@@ -1,8 +1,8 @@
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
+    --grid-item-padding: 10px; 
   }
-
 
   /* Heading */
   h1 {
@@ -10,8 +10,7 @@
       text-align: center;
   }
 
-
-  /*User Interface*/
+ /*User Interface*/
   #gridSetup {
     text-align: center;
   }
@@ -28,13 +27,15 @@
   /*Grid Formatting*/
   #container {
     display: grid;
-    grid-gap: 0.2em;
+    grid-gap: 1px;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols),  1fr);
+    width: 50%;
+    margin: auto;
   }
   
   .grid-item {
-    padding: 1em;
+    padding: var(--grid-item-padding);
     border: 1px solid #ddd;
     text-align: center;
   } 

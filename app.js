@@ -52,6 +52,12 @@ function createGridLayout() {
     gridDim = 100;
     gridInput.value = 100;
   }
+  //Grid padding is determined by grid dimensions
+  if (gridDim > 50 && gridDim <= 100) {
+    container.style.setProperty('--grid-item-padding', '3px');
+  } else if (gridDim <= 50 && gridDim > 16) {
+    container.style.setProperty('--grid-item-padding', '5px');
+  }
   //Run Function to Generate Grid Layout
   makeRows(gridDim, gridDim);
 }
